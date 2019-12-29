@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,800&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.header {
+  width: 200px;
+  height: auto;
+  position: relative;
+  margin-bottom: 150px;
+}
+
+.header img {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: bold;
+}
+.font-section p {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.font-section2 {
+    float:right;
+}
+.font-section2 p {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 5px;
+
+}
+
+.service-intro {
+  padding: 90px 0;
+}
+
+.latest-users {
+    margin-top: 100px;
+    position: relative;
+  }
+   
+  .latest-users p {
+    display: inline-block;
+  }
+   
+  .list-item {
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 6px;
+  }
+   
+  .list-item-info h6 {
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 7px;
+    margin-bottom: 0;
+  }
+   
+  .list-item-info p {
+    font-size: 10px;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+   
+  .list-item .list-item_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+   
+  .list-item-icons img {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+  }
+   
+  .list-item-icons {
+    position: absolute;
+    right: 10px;
+    top: 25px;
+  }
+   
+  .list-item-rd, .list-item-info {
+    padding: 10px;
+  }
+   
+  .font-section p{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .ls-item {
+      margin-bottom: 100px;
+  }
+
+
+  .col-md-4.pl-0:nth-child(3n+3){
+      padding-right: 0px;
+
+
+  }
+
+
+  #refresh {
+    cursor: pointer;    
+ }
+
+ .wordwrap {    
+  word-wrap: break-word;
+}
+
+.img-cardbox{
+  text-align:center;
+}
+
+.username-cardbox{
+  font-weight: normal;
+  /* font-size: 17px; */
+}

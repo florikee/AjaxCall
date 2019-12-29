@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+
+
+    <title>API</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="header">
+          <img src="img/ceyond.png" />
+        </div>
+      </div>
+
+      <div class="row">
+        <h1 class="title">
+          Manage your clients with<br />
+          CEYOND CRM APP
+        </h1>
+      </div>
+
+      <div class="row service-intro">
+        <div class="col-md-10 p-0">
+          <div class="font-section">
+            <p>Latest users</p>
+          </div>
+        </div>
+
+        <div id="refresh" class="col-md-2">
+          <div class="font-section2 row">
+            <img src="img/refresh.svg" />
+            <p>Refresh</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row ls-item" id="cardBoxes">
+          </div>
+
+
+      <script>
+
+$('#refresh').click(function() {
+    location.reload();
+});
+
+
+        jQuery.ajax({
+          url: "https://jsonplaceholder.typicode.com/users",
+          type: "GET",
+          success: function(response) {
+            // console.log(response);
+            // var data = jQuery.parseJSON(response);
+            // console.log(data);
+            $.each(response,function(key,value){
+               console.log("Value: "+ value.address.geo.lat);
+                $("#cardBoxes").append(`<div class="col-md-4 pl-0">
+  <div class="list-item">
+    <div class="feature row p-0 d-flex">
+      <div class="col-md-3 list-item-rd img-cardbox">
+        <img src="img/foto.png" class="list-item_img" />
+      </div>
+      <div class="list-item-info col-md-5">
+        <h6>` + value.name +` <span class="username-cardbox">(`+ value.username +`)</span></h6>
+
+        <p>` + value.email +`</p>
+      </div>
+      <div class="list-item-info m-0 col-md-4">
+        <div class="p-0">
+          <div class="list-item-icons pr-2 d-flex">
+            <a href="tel: ` + value.phone + `"
+              ><img src="img/phone-outline (1).svg"
+            /></a>
+            <a href="http://` + value.website + `" target="_blank"
+              ><img src="img/globe-2-outline.svg"
+            /></a>
+            <a
+              href="https://maps.google.com?q=`+ value.address.geo.lat + `,` + value.address.geo.lng + `"
+              target="_blank"
+              ><img src="img/Shape.svg"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`
+             
+            )
+
+            })
+          },
+          error: function(response) {
+            console.log(response);
+          }
+        });
+      </script>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
