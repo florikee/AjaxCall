@@ -8,9 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
-
-
-    <title>API</title>
+    <title>Ajax Call</title>
   </head>
 
   <body>
@@ -51,9 +49,7 @@
 
       <script>
 
-$('#refresh').click(function() {
-    location.reload();
-});
+$("#cardBoxes").load(location.href + " #cardBoxes");
 
 
         jQuery.ajax({
@@ -64,7 +60,7 @@ $('#refresh').click(function() {
             // var data = jQuery.parseJSON(response);
             // console.log(data);
             $.each(response,function(key,value){
-               console.log("Value: "+ value.address.geo.lat);
+              //  console.log("Value: "+ value.address.geo.lat);
                 $("#cardBoxes").append(`<div class="col-md-4 pl-0">
   <div class="list-item">
     <div class="feature row p-0 d-flex">
