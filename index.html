@@ -48,11 +48,13 @@
 
 
       <script>
-
-$("#cardBoxes").load(location.href + " #cardBoxes");
-
-
-        jQuery.ajax({
+fetchUsers();
+$('#refresh').click(function() {
+  $("#cardBoxes").html("");
+  fetchUsers();
+    
+});
+  function fetchUsers(){   jQuery.ajax({
           url: "https://jsonplaceholder.typicode.com/users",
           type: "GET",
           success: function(response) {
@@ -102,6 +104,11 @@ $("#cardBoxes").load(location.href + " #cardBoxes");
             console.log(response);
           }
         });
+
+  }
+
+
+     
       </script>
     </div>
 
